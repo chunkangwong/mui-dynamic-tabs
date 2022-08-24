@@ -1,3 +1,15 @@
-# ts-react-redux-mui-vite-template
+# Material UI Dynamic Tabs
 
-A project template for a TypeScript React, Redux, MUI, Vite project.
+This project demonstrates the implementation of dynamic tabs using Material UI Tabs. As the item is selected on left panel, the selected component is lazy imported and rendered accordingly.
+
+## Installation
+
+```bash
+npm install / yarn install
+```
+
+## Usage
+
+```bash
+npm run dev / yarn dev
+```
