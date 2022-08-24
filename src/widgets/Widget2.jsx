@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Widget2() {
   function handleSubmit(event) {
-    const formData = new FormData(event.target );
+    const formData = new FormData(event.target);
     console.log(formData);
     event.preventDefault();
   }
