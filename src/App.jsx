@@ -3,14 +3,7 @@ import "./App.css";
 import WidgetList from "./components/WidgetList";
 import WidgetPanel from "./components/WidgetPanel";
 
-export interface Widget {
-  id: number;
-  title: String;
-  name: string;
-  active: boolean;
-}
-
-export const widgetsConfig: Widget[] = [
+export const widgetsConfig = [
   {
     id: 1,
     title: "Widget 1",
@@ -41,7 +34,7 @@ function App() {
   const [widgets, setWidgets] = React.useState(widgetsConfig);
   const [tabValue, setTabValue] = React.useState(0);
 
-  const handleWidgetButtonClick = (id: number, active: boolean) => {
+  const handleWidgetButtonClick = (id, active) => {
     const newWidgets = [...widgets];
     const widget = newWidgets.find((widget) => widget.id === id);
     if (widget) {
@@ -57,7 +50,7 @@ function App() {
     }
   };
 
-  const handleChangeTabValue = (newValue: number) => {
+  const handleChangeTabValue = (newValue) => {
     setTabValue(newValue);
   };
 

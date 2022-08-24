@@ -1,9 +1,9 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import React from "react";
 
-export default function Widget1() {
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    const formData = new FormData(event.target as HTMLFormElement);
+export default function Widget2() {
+  function handleSubmit(event) {
+    const formData = new FormData(event.target );
     console.log(formData);
     event.preventDefault();
   }
@@ -19,7 +19,7 @@ export default function Widget1() {
       }}
     >
       <Typography variant="h6" gutterBottom>
-        Widget 1
+        Widget 2
       </Typography>
       <TextField label="First Name" />
       <Button type="submit" variant="contained">

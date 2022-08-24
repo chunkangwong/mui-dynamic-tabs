@@ -2,7 +2,7 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import React from "react";
 
 export default function Widget4() {
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event) {
     const formData = new FormData(event.currentTarget);
     console.log(formData);
     event.preventDefault();

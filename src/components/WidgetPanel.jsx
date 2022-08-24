@@ -2,23 +2,10 @@ import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import * as React from "react";
-import { Widget } from "../App";
 
-interface WidgetPanelProps {
-  activeWidgets: Widget[];
-  tabValue: number;
-  handleChangeTabValue: (newValue: number) => void;
-}
-
-interface TabPanelProps {
-  widgetName: string;
-  index: number;
-  value: number;
-}
-
-function TabPanel(props: TabPanelProps) {
+function TabPanel(props) {
   const { value, widgetName, index, ...other } = props;
-  const Component = React.lazy(() => import(`../widgets/${widgetName}.tsx`));
+  const Component = React.lazy(() => import(`../widgets/${widgetName}.jsx`));
 
   return (
     <div
@@ -37,7 +24,7 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-function a11yProps(index: number) {
+function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
@@ -48,8 +35,8 @@ export default function WidgetPanel({
   activeWidgets,
   tabValue,
   handleChangeTabValue,
-}: WidgetPanelProps) {
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+}) {
+  const handleChange = (event, newValue) => {
     handleChangeTabValue(newValue);
   };
 
