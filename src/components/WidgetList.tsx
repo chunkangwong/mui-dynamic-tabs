@@ -1,5 +1,5 @@
 import { List, ListItemButton } from "@mui/material";
-import { Widget } from "../widgets.config";
+import { Widget } from "../App";
 
 interface WidgetListProps {
   widgets: Widget[];
