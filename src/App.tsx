@@ -52,8 +52,7 @@ function App() {
         // Switch to the tab containing the newly added widget
         setTabValue(widgets.filter((w) => w.active && w.id < id).length);
       } else {
-        // Switch to the first tab
-        setTabValue(0);
+        setTabValue(tabValue === 0 ? 0 : tabValue - 1);
       }
     }
   };
