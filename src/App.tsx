@@ -1,23 +1,27 @@
 import { Button, Typography } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
-import { setCount } from "./features/count/countSlice";
-import { RootState } from "./store/store";
+import * as React from "react";
+import { widgetsConfig } from "./widgets.config";
+import WidgetList from "./components/WidgetList";
 
 function App() {
-  const { count } = useSelector((state: RootState) => state.count);
-  const dispatch = useDispatch();
+  const [widgets, setWidgets] = React.useState(widgetsConfig);
 
-  function handleClick() {
-    dispatch(setCount(count + 1));
-  }
+  const handleWidgetButtonClick = (id: number, active: boolean) => {
+    const newWidgets = [...widgets];
+    const widget = newWidgets.find((widget) => widget.id === id);
+    if (widget) {
+      widget.active = active;
+      setWidgets(newWidgets);
+    }
+  };
 
   return (
     <div className="App">
-      <Typography>Hello World</Typography>
-      <Button onClick={handleClick} variant="contained">
-        {count}
-      </Button>
+      <WidgetList
+        widgets={widgetsConfig}
+        handleWidgetButtonClick={handleWidgetButtonClick}
+      />
     </div>
   );
 }
